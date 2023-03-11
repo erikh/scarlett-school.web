@@ -1,15 +1,13 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 
-import Nav from "./components/nav";
+import Nav from "../../components/nav";
 
-function App() {
+export default function About() {
   return (
     <React.Fragment>
       <Nav />
-      <Typography>Front Page!</Typography>
+      <Typography>About Page!</Typography>
     </React.Fragment>
   );
 }
-
-export default App;
