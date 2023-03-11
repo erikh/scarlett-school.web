@@ -11,6 +11,9 @@ import About from "./pages/about";
 import Lessons from "./pages/lessons";
 import Contact from "./pages/contact";
 
+import Nav from "./components/nav";
+import Footer from "./components/footer";
+
 import CssBaseline from "@mui/material/CssBaseline";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -48,16 +51,16 @@ const theme = createTheme({
       main: "#8b1e3fff",
     },
     secondary: {
-      main: "#d36135ff",
+      main: "#d7c9aaff",
     },
     error: {
-      main: "#d999b9ff",
+      main: "#d36135ff",
     },
     warning: {
-      main: "#3891a6ff",
+      main: "#d999b9ff",
     },
     info: {
-      main: "#d7c9aaff",
+      main: "#3891a6ff",
     },
     success: grey,
   },
@@ -68,7 +71,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Nav />
       <RouterProvider router={router} />
+      <Footer />
     </ThemeProvider>
   </React.StrictMode>
 );
