@@ -9,6 +9,7 @@ import "@fontsource/roboto/700.css";
 import App from "./App";
 import About from "./pages/about";
 import Lessons from "./pages/lessons";
+import LessonsUnix from "./pages/lessons/unix";
 import Contact from "./pages/contact";
 
 import Nav from "./components/nav";
@@ -32,6 +33,14 @@ const router = createBrowserRouter([
   {
     path: "/lessons",
     element: <Lessons />,
+  },
+  {
+    path: "/lessons/unix",
+    element: <LessonsUnix />,
+  },
+  {
+    path: "/lessons/unix/:id",
+    element: <LessonsUnix />,
   },
   {
     path: "/contact",
