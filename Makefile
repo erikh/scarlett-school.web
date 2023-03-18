@@ -2,8 +2,9 @@ PORT=80
 NAME=scarlett-school
 IMAGE=scarlett-school
 
-all: down sync
+all: sync
 	docker build -t scarlett-school .
+	make down
 	docker run -d --name $(NAME) -p $(PORT):80 $(IMAGE)
 
 down:
