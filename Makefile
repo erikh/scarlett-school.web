@@ -7,7 +7,7 @@ all: down sync
 	docker run -d --name $(NAME) -p $(PORT):80 $(IMAGE)
 
 down:
-	docker rm -f $(NAME)
+	docker rm -f $(NAME) || :
 
 test:
 	make PORT=8000 all
