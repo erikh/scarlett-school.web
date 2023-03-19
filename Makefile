@@ -14,6 +14,8 @@ test:
 	make PORT=8000 all
 
 sync:
+	docker pull nginx
+	docker pull node
 	git pull --rebase
 	git submodule init
 	git submodule update
