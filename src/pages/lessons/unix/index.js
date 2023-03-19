@@ -4,7 +4,7 @@ import Link from "@mui/material/Link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { light } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useParams } from "react-router-dom";
 import preval from "preval.macro";
 
@@ -66,7 +66,7 @@ export default function LessonsUnix() {
                 return !inline && match ? (
                   <SyntaxHighlighter
                     children={String(children).replace(/\n$/, "")}
-                    style={light}
+                    style={dark}
                     language={match[1]}
                     PreTag="div"
                     {...props}
