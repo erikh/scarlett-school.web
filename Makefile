@@ -17,3 +17,4 @@ sync:
 	git pull --rebase
 	git submodule init
 	git submodule update
+	cd source && git pull --rebase
