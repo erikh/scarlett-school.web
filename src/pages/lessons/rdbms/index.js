@@ -15,6 +15,10 @@ const lessons = preval`
       name: "Tables",
       path: "rdbms/2-tables.md",
     },
+    {
+      name: "SQL Basics",
+      path: "rdbms/3-sql-basics.md",
+    },
   ]);
 `;
 
