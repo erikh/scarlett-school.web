@@ -28,7 +28,14 @@ export default function Lessons() {
       </p>
       <ul>
         <li>
-          <Link href="/lessons/unix">Unix</Link>
+          <Link href="/lessons/unix">
+            Unix Fundamentals with the Linux Operating System
+          </Link>
+        </li>
+        <li>
+          <Link href="/lessons/rdbms">
+            RDBMS: Relational Databases &amp; SQL
+          </Link>
         </li>
       </ul>
     </Typography>

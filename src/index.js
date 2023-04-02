@@ -10,6 +10,7 @@ import App from "./App";
 import About from "./pages/about";
 import Lessons from "./pages/lessons";
 import LessonsUnix from "./pages/lessons/unix";
+import LessonsRDBMS from "./pages/lessons/rdbms";
 import Contact from "./pages/contact";
 
 import Nav from "./components/nav";
@@ -41,6 +42,14 @@ const router = createBrowserRouter([
   {
     path: "/lessons/unix/:id",
     element: <LessonsUnix />,
+  },
+  {
+    path: "/lessons/rdbms",
+    element: <LessonsRDBMS />,
+  },
+  {
+    path: "/lessons/rdbms/:id",
+    element: <LessonsRDBMS />,
   },
   {
     path: "/contact",
