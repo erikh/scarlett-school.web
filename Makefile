@@ -16,7 +16,6 @@ test:
 sync:
 	docker pull nginx
 	docker pull node
-	git pull --rebase
 	git submodule init
 	git submodule update
 	cd source && git checkout main && git pull --rebase

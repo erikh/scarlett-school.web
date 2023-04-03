@@ -19,6 +19,10 @@ const lessons = preval`
       name: "SQL Basics",
       path: "rdbms/3-sql-basics.md",
     },
+    {
+      name: "Joins & Sub-selects",
+      path: "rdbms/4-joins-and-subselects.md",
+    },
   ]);
 `;
 
