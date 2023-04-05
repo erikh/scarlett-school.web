@@ -23,6 +23,14 @@ const lessons = preval`
       name: "Joins & Sub-selects",
       path: "rdbms/4-joins-and-subselects.md",
     },
+    {
+      name: "Keys, Indices & Constraints",
+      path: "rdbms/5-keys-indices-and-constraints.md",
+    },
+    {
+      name: "Types & Sequences",
+      path: "rdbms/6-types-and-sequences.md",
+    },
   ]);
 `;
 
