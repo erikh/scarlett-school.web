@@ -31,6 +31,10 @@ const lessons = preval`
       name: "Types & Sequences",
       path: "rdbms/6-types-and-sequences.md",
     },
+    {
+      name: "Select Options and Stanzas",
+      path: "rdbms/7-select-options.md",
+    },
   ]);
 `;
 
