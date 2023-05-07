@@ -3,7 +3,7 @@ NAME=scarlett-school
 IMAGE=scarlett-school
 
 all: sync
-	docker build -t scarlett-school .
+	docker build --build-arg PORT=80 -t scarlett-school .
 	make down
 	docker run -d --name $(NAME) -p $(PORT):80 $(IMAGE)
 
