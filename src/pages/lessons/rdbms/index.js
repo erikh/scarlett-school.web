@@ -35,6 +35,10 @@ const lessons = preval`
       name: "Select Options and Stanzas",
       path: "rdbms/7-select-options.md",
     },
+    {
+      name: "Aggregate Functions",
+      path: "rdbms/8-aggregate-functions.md",
+    },
   ]);
 `;
 
