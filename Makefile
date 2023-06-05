@@ -2,17 +2,26 @@ PORT=80
 NAME=scarlett-school
 IMAGE=scarlett-school
 
-all: sync
-	docker build --build-arg PORT=80 -t scarlett-school .
-	make down
+all: sync build
+
+build:
+	docker build -t scarlett-school .
+
+start:
 	docker run -d --name $(NAME) -p $(PORT):80 $(IMAGE)
 
 down:
 	docker rm -f $(NAME) || :
 
-test:
-	make PORT=8000 all
+test: all down
+	make PORT=8000 start
 
 sync:
-	docker pull nginx
+	docker pull caddy
 	docker pull node
+
+ship:
+	docker save scarlett-school >scarlett-school.img
+	scp scarlett-school.img root@107.170.250.26:~
+	ssh root@107.170.250.26 "bash -c 'docker load <scarlett-school.img && rm scarlett-school.img'"
+	rm scarlett-school.img
