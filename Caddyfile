@@ -1,0 +1,7 @@
+www.scarlett-school.org scarlett-school.org {
+	handle_path /* {
+		root * /build
+		try_files {path} /index.html
+		file_server
+	}
+}
