@@ -25,3 +25,5 @@ ship:
 	scp scarlett-school.img root@107.170.250.26:~
 	ssh root@107.170.250.26 "bash -c 'docker load <scarlett-school.img && rm scarlett-school.img'"
 	rm scarlett-school.img
+
+.PHONY: build

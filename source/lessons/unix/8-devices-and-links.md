@@ -36,24 +36,24 @@ As previously mentioned, the operating system provides a number of special
 facilities through files. Here is a short list of several of them. All these
 files live in `/dev`.
 
-- `null`: this is "nothing". Redirecting I/O here means it will be discarded,
-  as well as redirecting from it will immediately close the I/O for programs
-  that expect input.
-- `zero`: This file repeatedly produces `0` in ASCII, the standard for
-  byte-encoding text in computers, which is called the "null" character -- do
-  not confuse it with the `null` device above! The null character is a byte
-  that takes space, just can't be seen. This file is used when you want to send
-  a lot of pointless data somewhere in a hurry, like for example, when you want
-  to overwrite a disk you previously had sensitive data on.
-- `/dev/fd/0`, `/dev/fd/1`, `/dev/fd/2`, etc: These correspond to file
-  descriptors for the current running program. Useful in scripts.
-- `stdin`, `stdout`, `stderr`: correspond to the different types of standard
-  I/O. Sometimes these are symbolically linked (keep reading) to `/dev/fd/0`,
-  `/dev/fd/1`, and `/dev/fd/2` respectively.
-- `random` and `urandom`: access to the random number generator. `random` will
-  spit out random data until the generator is exhausted, and will continue when
-  it is "seeded", or has more. `urandom` will "fake it". The details of the
-  faking are quite complex.
+-   `null`: this is "nothing". Redirecting I/O here means it will be discarded,
+    as well as redirecting from it will immediately close the I/O for programs
+    that expect input.
+-   `zero`: This file repeatedly produces `0` in ASCII, the standard for
+    byte-encoding text in computers, which is called the "null" character -- do
+    not confuse it with the `null` device above! The null character is a byte
+    that takes space, just can't be seen. This file is used when you want to send
+    a lot of pointless data somewhere in a hurry, like for example, when you want
+    to overwrite a disk you previously had sensitive data on.
+-   `/dev/fd/0`, `/dev/fd/1`, `/dev/fd/2`, etc: These correspond to file
+    descriptors for the current running program. Useful in scripts.
+-   `stdin`, `stdout`, `stderr`: correspond to the different types of standard
+    I/O. Sometimes these are symbolically linked (keep reading) to `/dev/fd/0`,
+    `/dev/fd/1`, and `/dev/fd/2` respectively.
+-   `random` and `urandom`: access to the random number generator. `random` will
+    spit out random data until the generator is exhausted, and will continue when
+    it is "seeded", or has more. `urandom` will "fake it". The details of the
+    faking are quite complex.
 
 ## Links
 
@@ -76,12 +76,9 @@ are called "inodes", and it is not important how they work.
 A hard link is simply a second mapping of the file's inode to a new name. As a
 result:
 
-- Hard links cannot span mount points
-- Hard links may not be directories
+-   Hard links cannot span mount points
+-   Hard links may not be directories
 
 ## Assignment
 
-Create an empty file with `echo foo >file.txt`, then create a symbolic link to
-it named `file2.txt`. Then, `rm` and rewrite the file with `echo bar
->file.txt`, and `cat file2.txt`. Describe what happened in your own words, and
-explain why, too. Then do it with a hard link; did anything change? Why?
+Create an empty file with `echo foo >file.txt`, then create a symbolic link to it named `file2.txt`. Then, `rm` and rewrite the file with `echo bar >file.txt`, and `cat file2.txt`. Describe what happened in your own words, and explain why, too. Then do it with a hard link; did anything change? Why?
