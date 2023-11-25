@@ -9,6 +9,7 @@ import "@fontsource/roboto/700.css";
 import App from "./App";
 import About from "./pages/about";
 import Lessons from "./pages/lessons";
+import LessonsGeneralProgramming from "./pages/lessons/general-programming";
 import LessonsUnix from "./pages/lessons/unix";
 import LessonsRDBMS from "./pages/lessons/rdbms";
 import Contact from "./pages/contact";
@@ -34,6 +35,14 @@ const router = createBrowserRouter([
   {
     path: "/lessons",
     element: <Lessons />,
+  },
+  {
+    path: "/lessons/general-programming",
+    element: <LessonsGeneralProgramming />,
+  },
+  {
+    path: "/lessons/general-programming/:id",
+    element: <LessonsGeneralProgramming />,
   },
   {
     path: "/lessons/unix",

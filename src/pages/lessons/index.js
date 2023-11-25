@@ -28,6 +28,11 @@ export default function Lessons() {
       </p>
       <ul>
         <li>
+          <Link href="/lessons/general-programming">
+            General Programming Education - Start Here!
+          </Link>
+        </li>
+        <li>
           <Link href="/lessons/unix">
             Unix Fundamentals with the Linux Operating System
           </Link>
