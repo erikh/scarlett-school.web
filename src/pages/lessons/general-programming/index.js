@@ -11,6 +11,10 @@ const lessons = preval`
       name: "Introduction to General Programming",
       path: "general-programming/1-intro.md"
     },
+    { 
+      name: "Variables and Operators",
+      path: "general-programming/2-variables-and-operators.md"
+    },
   ]);
 `;
 
