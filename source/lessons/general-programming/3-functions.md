@@ -88,7 +88,7 @@ console.log(z); // same with z
 console.log(x); // x exists, however, and 5 will be printed to the log.
 ```
 
-Note that `console.log` is a _library call_ that is provided by the programming language (in this case, javascript), and that we've passed the variables as inputs to that call. `console` is actually an _object_, which we will read about soon, and `log` is the function (sometimes called a _method_) that is used in conjunction with it.
+Note that `console.log` is a _library call_ that is provided by the programming language (in this case, JavaScript), and that we've passed the variables as inputs to that call. `console` is actually an _object_, which we will read about soon, and `log` is the function (sometimes called a _method_) that is used in conjunction with it.
 
 ## Objects and Methods
 
