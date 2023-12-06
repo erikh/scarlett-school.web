@@ -48,9 +48,11 @@ Most of what you will do with a computer involves calling functions. To talk to 
 
 ## Scope and Variables
 
-The blocks you defined with `{` denote _scope_, which means that all statements within the block are kept in a unique storage area and are discarded once the _call_ has completed.
+The blocks you defined between `{` and `}` denote _scope_, which means that all statements within the block are kept in a unique storage area and are discarded once the _call_ has completed.
 
 Some variables exist in _local scope_, which means their data is temporary: only for the lifetime of the call. Other variables, which are created outside the scope, have _outer_ or sometimes _global_ scope, which means they last longer than the _inner_ scope, which is what is executing right now.
+
+Scope is fundamentally a hierarchy; that is, scope traverses gradually inward, and the inner most scopes have the shortest lifetimes, and are inaccessible to the outer scopes. Think of it sort of like a "Russian Doll", where you cannot get to the smallest doll without removing the larger ones.
 
 Here's an example of scopes. This is an invalid program for a lot of reasons. Note the text following `//` is a _comment_, a way for programmers to annotate what code is doing:
 
@@ -65,7 +67,10 @@ function sayHello(y) {
 
     // the block is the start of inner scope. Above is outer scope
     {
-        z = z + 1; // z is available here, because it was defined in the outer scope
+        // z is available here, because it was created (or defined) in the
+        // outer scope. Changes to it will be available in the outer scope,
+        // because it was defined there, regardless of what is done to it here.
+        z = z + 1;
         a = z + 2; // a is defined here, and only available in the inner scope
     } // inner scope ends
 
@@ -73,11 +78,17 @@ function sayHello(y) {
     return z;
 }
 
-console.log(y); // y does not exist here, and will raise an error, or y will be "undefined" in the best case
+// y, a, and z are local to the function; they do not exist in the global
+// scope, and therefore will be "undefined" here, or in some languages, generate a
+// compiler error because they do not exist, and the program will fail to work
+// entirely.
+console.log(y); // y does not exist here
 console.log(a); // a does not exist here either
 console.log(z); // same with z
-console.log(x); // x exists, however
+console.log(x); // x exists, however, and 5 will be printed to the log.
 ```
+
+Note that `console.log` is a _library call_ that is provided by the programming language (in this case, javascript), and that we've passed the variables as inputs to that call. `console` is actually an _object_, which we will read about soon, and `log` is the function (sometimes called a _method_) that is used in conjunction with it.
 
 ## Objects and Methods
 
