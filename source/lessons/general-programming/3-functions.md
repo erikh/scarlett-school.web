@@ -93,8 +93,104 @@ console.log(x); // x exists, however, and 5 will be printed to the log.
 
 Note that `console.log` is a _library call_ that is provided by the programming language (in this case, JavaScript), and that we've passed the variables as inputs to that call. `console` is actually an _object_, which we will read about soon, and `log` is the function (sometimes called a _method_) that is used in conjunction with it.
 
-## Objects and Methods
-
 ## Higher-Order Functions
 
+When a function can be used like a variable, it is commonly called a "Higher-Order Function". You may also hear this called a "closure" or "lambda". Don't focus on the names; the application of these are very powerful and understanding them is key to becoming a good engineer.
+
+Allowing you to keep a function in a variable means that you can define them and share them as if they were data. This allows you to provide optional logic or swappable logic in a situation that would otherwise not allow for it.
+
+For example, let's say when the user asks, our `add` routine adds two numbers to the number `3`. If the user doesn't ask, it just adds the two numbers.
+
+```javascript
+function add3(x, y) {
+    return x + y + 3
+}
+
+function add(x, y) {
+    return x + y
+}
+
+function want_add3(wants) {
+    if wants {
+        return add3;
+    } else {
+        return add;
+    }
+}
+
+f = want_add3(true);
+f(1, 2); // equals 6: 1 + 2 + 3
+f = want_add3(false);
+f(1, 2); // equals 3: 1 + 2
+```
+
+The ability to store `add` or `add3` in `f`, and pass it around as the result of other function calls, allowed us to switch the logic based on input.
+
 ## Assignment
+
+About this code:
+
+```javascript
+z = multiply(2, 3);
+```
+
+1. What is the name of the function?
+1. What are its inputs?
+1. Where is its output stored?
+
+Regarding this code sample:
+
+```javascript
+x = 5;
+
+{
+    z = x + 1;
+
+    {
+        a = z + 1;
+        a = a + 1;
+    }
+
+    z = a + 1;
+    x = z;
+}
+```
+
+1. There is one line in this code which is invalid.
+    1. Which line is invalid?
+    1. Why is it invalid?
+1. What is the result of `x` after running this code, with the invalid line removed?
+
+Finally, this code:
+
+```javascript
+function addName(name) {
+    return "hello, " + name;
+}
+
+function justHello(name) {
+    return "hello";
+}
+
+function main() {
+    // args is the command-line arguments, in order.
+    //
+    // args is an array, or ordered collection of independent data elements. We
+    // are taking the first element of that array.
+    //
+    // More about arrays will be covered later.
+    name = args[0];
+    greeting = justHello;
+
+    if (name != "") {
+        greeting = addName;
+    }
+
+    console.log(greeting(name));
+}
+```
+
+1. Which function executes first in this code?
+1. What does `greeting` call? Does it ever change?
+1. Name at least one term for how `addName` and `justHello` are being used in combination with `greeting`.
+1. Speculate at how this program is run on the command-line.
