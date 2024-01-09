@@ -2,7 +2,7 @@
 
 In programming, similar to mathematics, _functions_ are used to iconify a section of code, composed of many _statements_, similar to how a mathematical function encapsulates a formula.
 
-Functions can be re-used, sometimes numerous times, to perform the same computation over and over again. Most of your programming time will be spent manipulating some set of function, often called an _interface_, to achieve a goal related to that interface, such as reading files, or drawing to the computer's screen, or controlling a web browser.
+Functions can be re-used, sometimes numerous times, to perform the same computation over and over again. Most of your programming time will be spent manipulating some set of functions, often called an _interface_, to achieve a goal related to that interface, such as reading files, or drawing to the computer's screen, or controlling a web browser.
 
 In this section, we attempt to explain functions in-depth, the consequences they have on your code, and some of the types of functions you might encounter.
 
@@ -14,7 +14,8 @@ Here is an example of a function; do not be too focused on the syntax, but what 
 
 ```javascript
 function addTwoNumbers(x, y) {
-    return x + y;
+    let z = x + y;
+    return z;
 }
 ```
 
@@ -22,13 +23,13 @@ Here, we can see a few things:
 
 ### Functions take inputs and provide output
 
-Inputs, as listed above, are the `x` and `y` variables listed in parentheses after the declaration of `addTwoNumbers`. They are listed in order, and when they are _called_, or executed (see the next section of this lesson), those inputs are listed in order as a part of the call. A statement, `return x + y`, is provided within the _block_ of the function, or the body, similar to a paragraph in an essay.
+Inputs, as listed above, are the `x` and `y` variables listed in parentheses after the declaration of `addTwoNumbers`. They are listed in order, and when they are _called_, or executed (see the next section of this lesson), those inputs are listed in order as a part of the call. Two statements, separated by a semi-colon and newline, is provided within the _block_ of the function, or the body, similar to a paragraph in an essay.
 
-The `return` statement tells the program that this function is ready to _return an output_. Whoever calls this function will get the result of `x + y` provided to them as a result of calling that function. Not all languages use the `return` keyword, sometimes utilizing other methods to return outputs, but this is common amongst many languages.Returning output usually terminates the function call immediately, so other statements that follow it will not be executed.
+The `return` statement tells the program that this function is ready to _return an output_. Whoever calls this function will get the result of `x + y` provided to them as a result of calling that function. Not all languages use the `return` keyword, sometimes utilizing other methods to return outputs, but this is common amongst many languages. Returning output usually terminates the function call immediately, so other statements that follow it will not be executed.
 
 ### Functions are composed of blocks and statements
 
-A block, here denoted by the braces (`{` and `}`), tells the program that these are the statements to be executed when the function is called. This block only has one statement: `return x + y`. Blocks are not limited to notating function bodies; they can be used to organize any related segment of code statements in most languages.
+A block, here denoted by the braces (`{` and `}`), tells the program that these are the statements to be executed when the function is called. This block has two statements: `let z = x + y` and `return z`. Statements are executed from top to bottom in order. Blocks are not limited to notating function bodies; they can be used to organize any related segment of code statements in most languages.
 
 ### Functions are special, and have special syntax
 
@@ -61,8 +62,10 @@ x = 5; // Global Scope, x is available to everything
 
 // y has function scope, which is local to the function only
 function sayHello(y) {
-    // x is available here because it's global. y is local to the function, so
-    // it's also available. Here, we define z.
+    // x is available here because it's global. y is local to the function
+    // because it's an input to it, so it's also available.
+    //
+    // Here, we define z, which will also be local to the function.
     z = y + x;
 
     // the block is the start of inner scope. Above is outer scope
