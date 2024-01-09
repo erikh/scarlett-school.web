@@ -23,7 +23,7 @@ Here, we can see a few things:
 
 ### Functions take inputs and provide output
 
-Inputs, as listed above, are the `x` and `y` variables listed in parentheses after the declaration of `addTwoNumbers`. They are listed in order, and when they are _called_, or executed (see the next section of this lesson), those inputs are listed in order as a part of the call. Two statements, separated by a semi-colon and newline, is provided within the _block_ of the function, or the body, similar to a paragraph in an essay.
+Inputs, as listed above, are the `x` and `y` variables listed in parentheses after the declaration of `addTwoNumbers`. They are listed in order, and when they are _called_, or executed (see the next section of this lesson), those inputs are listed in order as a part of the call. Two statements, separated by a semi-colon and newline, are provided within the _block_ of the function, or the body, similar to a paragraph in an essay.
 
 The `return` statement tells the program that this function is ready to _return an output_. Whoever calls this function will get the result of `x + y` provided to them as a result of calling that function. Not all languages use the `return` keyword, sometimes utilizing other methods to return outputs, but this is common amongst many languages. Returning output usually terminates the function call immediately, so other statements that follow it will not be executed.
 

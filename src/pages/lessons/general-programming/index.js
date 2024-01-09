@@ -15,6 +15,10 @@ const lessons = preval`
       name: "Variables and Operators",
       path: "general-programming/2-variables-and-operators.md"
     },
+    { 
+      name: "Functions",
+      path: "general-programming/3-functions.md"
+    },
   ]);
 `;
 
