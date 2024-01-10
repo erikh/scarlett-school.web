@@ -10,6 +10,8 @@
 
 ## Objects and Methods
 
+## Interfaces
+
 ## Typing
 
 ### Strong and Weak Typing
