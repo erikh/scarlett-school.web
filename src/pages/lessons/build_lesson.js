@@ -4,7 +4,7 @@ import Link from "@mui/material/Link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function buildLesson(params, path, lessons) {
   if (params.id) {
@@ -19,13 +19,23 @@ export default function buildLesson(params, path, lessons) {
                 return !inline && match ? (
                   <SyntaxHighlighter
                     children={String(children).replace(/\n$/, "")}
-                    style={dark}
+                    style={solarizedlight}
                     language={match[1]}
                     PreTag="div"
                     {...props}
                   />
                 ) : (
-                  <code className={className} {...props}>
+                  <code
+                    style={{
+                      paddingLeft: "0.25em",
+                      paddingRight: "0.25em",
+                      border: "1px solid #888",
+                      backgroundColor: "#966",
+                      color: "white",
+                    }}
+                    className={className}
+                    {...props}
+                  >
                     {children}
                   </code>
                 );

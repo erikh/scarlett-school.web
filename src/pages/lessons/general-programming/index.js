@@ -19,6 +19,10 @@ const lessons = preval`
       name: "Functions",
       path: "general-programming/3-functions.md"
     },
+    { 
+      name: "Types",
+      path: "general-programming/4-types.md"
+    },
   ]);
 `;
 
