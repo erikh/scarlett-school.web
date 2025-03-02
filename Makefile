@@ -8,13 +8,13 @@ build:
 	docker build -t scarlett-school .
 
 start:
-	docker run -d --name $(NAME) -p $(PORT):80 $(IMAGE)
+	docker run -d --name $(NAME) -p 80:80 -p 443:443 $(IMAGE)
 
 down:
 	docker rm -f $(NAME) || :
 
 test: all down
-	make PORT=8000 start
+	make start
 
 sync:
 	docker pull caddy

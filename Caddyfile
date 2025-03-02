@@ -1,4 +1,4 @@
-www.scarlett-school.org scarlett-school.org {
+http://www.scarlett-school.org http://scarlett-school.org http://localhost {
 	handle_path /* {
 		root * /build
 		try_files {path} /index.html
